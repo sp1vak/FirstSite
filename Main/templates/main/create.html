@@ -1,0 +1,16 @@
+{% extends 'Main/base.html' %}
+
+
+{% block content %}
+      <div class="text-bg-dark alert show">
+        <h3>Create note</h3>
+        <form method="post">
+          {% csrf_token %}<br>
+          <input type="textinput" name="title" value="{{ notes.title }}" class="form-bg-dark alert show" placeholder="Enter title"><br>
+          <textarea type="textarea" name="note" value="{{ notes.note }}" placeholder="Enter description" class="form-bg-dark alert show width 15 height 25"></textarea><br>
+          <button type="submit" class="btn btn-success">Submit</button>
+          <span>{{ error }}</span>
+        </form>
+      </div>
+{% endblock %}
+

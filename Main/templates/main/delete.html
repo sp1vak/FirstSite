@@ -1,0 +1,12 @@
+{% extends 'Main/base.html' %}
+
+
+{% block content %}
+      <div class="text-bg-dark alert show">
+        <h3>Delete note</h3>
+        <form method="post">
+          {% csrf_token %}<br>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+{% endblock %}

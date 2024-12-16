@@ -1,0 +1,36 @@
+{% extends 'Main/base.html' %}
+
+
+
+
+{% block content %}
+    <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Notes</h1>
+        <p class="lead text-body-secondary">You can note something here.</p>
+        <p>
+          <a href="create/" class="btn btn-primary my-2">Create</a>
+          <a href="#" class="btn btn-secondary my-2">Help</a>
+        </p>
+      </div>
+    </div>
+  </section>
+    {% if notes %}
+      {% for el in notes %}
+        <div class="text-bg-dark alert show vw-5 bottom-0 end-0 mb-2 me-2 bd-mode-toggle">
+          <center>
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.note }}</p>
+            <small>
+              <a href="delete/{{ el.id }}">Delete</a>
+              <a href="edit/{{ el.id }}">Edit</a>
+            </small>
+          </center>
+        </div>
+      {% endfor %}
+    {% else %}
+      <center>You don`t have any notes!</center>
+    {% endif %}
+  </section>
+{% endblock %}
